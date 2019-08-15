@@ -12,8 +12,8 @@ def hello_world(request):
     """
     request_json = request.get_json()
     if request.args and 'message' in request.args:
-	value=request.args.get('message')
-	n=int(value)
+        value=request.args.get('message')
+        n=int(value)
         return n 
     elif request_json and 'message' in request_json:
         return request_json['message']
