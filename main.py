@@ -94,7 +94,7 @@ def eulerf(k):
     return sol3
 #
 # 
- def eulers_dream(request)
+def eulers_dream(request)
     if request.args and 'message' in request.args:
         value=request.args.get('message')
     elif request_json and 'message' in request_json:
