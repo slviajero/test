@@ -118,13 +118,14 @@ def eulers_dream(request):
         s=s+f"There is no solution for odd k.<br>"
     ns=len(result)
     if ns==0:
-        s=s+f"There is no solution for {k}"
+        s=s+f"There is no solution for {k} <br>"
     elif ns==1:
         r=result[0]
-        s=s+f"There is a unique solution {r}"
+        s=s+f"There is a unique solution {r} <br>"
     else:
-        s=s+f"There are {ns} different solutions {result}"
-    s=s+"Call the function with the url ?message= to calculate a different value.<br>"
-    s=s+"Example: <br>"
-    s=s+'<A HREF="https://europe-west2-staging-area-249707.cloudfunctions.net/function-1?message=1008">https://europe-west2-staging-area-249707.cloudfunctions.net/function-1?message=1008</A>'
+        s=s+f"There are {ns} different solutions {result} <br>"
+    s=s+"Call the function with the url argument ?message=... to calculate a different value.<br>"
+    s=s+"Example for the value 1008: <br>"
+    s=s+'<A HREF="https://europe-west2-staging-area-249707.cloudfunctions.net/function-1?message=1008">https://europe-west2-staging-area-249707.cloudfunctions.net/function-1?message=1008</A><br>'
+    s=s+'Source and documentation <A HREF="https://github.com/slviajero/test">https://github.com/slviajero/test</A><br>'
     return s  
