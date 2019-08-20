@@ -1,31 +1,7 @@
 from math import sqrt
 
-def hello_world(request):
-    """Responds to any HTTP request.
-    Args:
-        request (flask.Request): HTTP request object.
-    Returns:
-        The response text or any set of values that can be turned into a
-        Response object using
-        `make_response <http://flask.pocoo.org/docs/1.0/api/#flask.Flask.make_response>`.
-
-    Trying to do a bit more. 
-
-    """
-    request_json = request.get_json()
-    if request.args and 'message' in request.args:
-        value=request.args.get('message')
-        return f"value was = {value}"
-    elif request_json and 'message' in request_json:
-        return request_json['message']
-    else:
-        return f'Hello World! -- Hello. -- Hellohello!'
-#
-# euklids algorithm to find the greatest common divisor of two integers
-# non recursive for a change
-# no optimization like for example handling situation where one factor is 
-# much bigger than the other
-#
+# some of the functions from my number theory library not imported but copied
+# primitive euklid algorithm to find the greatest common divisor of two integers
 def euklid(i,j):
     if (i<1 or j<1):
         return 0
@@ -35,22 +11,24 @@ def euklid(i,j):
         else:
             j=j-i
         return j
-    
+
+# coprimes means no common divisor >1
 def coprime(i,j):
     return euklid(i,j)==1
 
+# congruences
 def congruent(i,j,m):
     return ((i%m)==(j%m))
 
+# divisibility, odd and even
 def divisible(i,j):
     return ((i%j)==0)
-
 def odd(n):
     return not divisible(n,2)
-
 def even(n):
     return divisible(n,2)
  
+# the main function
 def eulerf(k):
 # condition (0) k must be even, for odd numbers there is no solution
     if odd(k):
@@ -100,9 +78,11 @@ def eulerf(k):
         f=int(k/circ)
         sol3.append((a*f, b*f, c*f))
     return sol3
-#
-# 
+
+# the called function, processing the web request, accepts a json or http request 
+# copied from the hello world main function of google
 def eulers_dream(request):
+    
     request_json = request.get_json()
     if request.args and 'message' in request.args:
         value=request.args.get('message')
