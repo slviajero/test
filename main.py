@@ -113,5 +113,17 @@ def eulers_dream(request):
     
     k=int(value)
     result=eulerf(k)
-    s=f"a+b+c={k}.<br>Solutions are {result}"
-    return s
+    s="Solution of the Euler problem to find an pythagorean triplet a,b,c with a+b+c={k}:<br>"
+    if odd(k):
+        s=s+"There is no solution for odd k.<br>"
+        return s
+    ns=len(result)
+    if ns==0:
+        s=s+"There is no solution for {k}"
+        return s
+    elif ns==1:
+        r=result[0]
+        s=s+"There is a unique solution {r}"
+    else:
+        s=s+"There are {ns} different solutions {result}"
+        return s
