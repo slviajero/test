@@ -101,7 +101,8 @@ def eulers_dream(request):
         value=request_json['message']
     else:
         value=1000
-        k=int(value)
-        result=eulerf(k)
-        s=f"a+b+c={k}.<br>Solutions are {result}"
+    
+    k=int(value)
+    result=eulerf(k)
+    s=f"a+b+c={k}.<br>Solutions are {result}"
     return s
