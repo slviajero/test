@@ -113,19 +113,19 @@ def eulers_dream(request):
     
     k=int(value)
     result=eulerf(k)
-    s=f"Solution of the Euler problem to find an pythagorean triplet a,b,c with a+b+c={k}:<br>"
+    s=f"Solution of the Euler problem number 9 to find an pythagorean triplet a,b,c with a+b+c=k.<br><br>"
     if odd(k):
         s=s+f"There is no solution for odd k.<br>"
     ns=len(result)
     if ns==0:
-        s=s+f"There is no solution for {k} <br>"
+        s=s+f"There is no solution for {k}.<br>"
     elif ns==1:
         r=result[0]
-        s=s+f"There is a unique solution {r} <br>"
+        s=s+f"There is one solution {r} for k={k}.<br>"
     else:
-        s=s+f"There are {ns} different solutions {result} <br>"
-    s=s+"Call the function with the url argument ?message=... to calculate a different value.<br>"
-    s=s+"Example for the value 1008: <br>"
+        s=s+f"There are {ns} different solutions {result} for k={k}.<br>"
+    s=s+"<br>Call the function with the url argument ?message=... for a different value of k.<br>"
+    s=s+"<nr>Example for the value 1008: <br>"
     s=s+'<A HREF="https://europe-west2-staging-area-249707.cloudfunctions.net/function-1?message=1008">https://europe-west2-staging-area-249707.cloudfunctions.net/function-1?message=1008</A><br>'
     s=s+'Source and documentation <A HREF="https://github.com/slviajero/test">https://github.com/slviajero/test</A><br>'
     return s  
