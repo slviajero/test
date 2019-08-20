@@ -14,7 +14,7 @@ def hello_world(request):
     if request.args and 'message' in request.args:
         value=request.args.get('message')
         i=int(value)*2
-        return f"value was = {value} and doubled it is {i}"
+        return f"value was = {value} <br> and doubled it is {i}"
     elif request_json and 'message' in request_json:
         return request_json['message']
     else:
