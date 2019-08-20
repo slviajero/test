@@ -44,10 +44,10 @@ def divisible(i,j):
     return ((i%j)==0)
 
 def odd(n):
-    return divisible(n,2)
+    return not divisible(n,2)
 
 def even(n):
-    return not divisible(n,2)
+    return divisible(n,2)
  
 def eulerf(k):
 # condition (0) k must be even, for odd numbers there is no solution
