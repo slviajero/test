@@ -95,6 +95,7 @@ def eulerf(k):
 #
 # 
 def eulers_dream(request):
+    request_json = request.get_json()
     if request.args and 'message' in request.args:
         value=request.args.get('message')
     elif request_json and 'message' in request_json:
