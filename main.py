@@ -10,7 +10,7 @@ def euklid(i,j):
             i=i-j
         else:
             j=j-i
-        return j
+    return j
 
 # coprimes means no common divisor >1
 def coprime(i,j):
@@ -81,7 +81,7 @@ def eulerf(k):
 
 # the called function, processing the web request, accepts a json or http request 
 # copied from the hello world main function of google
-def eulers_dream(request):
+def eulers_dream(value):
     
     request_json = request.get_json()
     if request.args and 'message' in request.args:
@@ -90,7 +90,7 @@ def eulers_dream(request):
         value=request_json['message']
     else:
         value=1000
-    
+     
     k=int(value)
     result=eulerf(k)
     s=f"Solution of the Euler problem number 9 to find an pythagorean triplet a,b,c with a+b+c=k.<br><br>"
@@ -110,3 +110,4 @@ def eulers_dream(request):
     s=s+'Source and documentation <A HREF="https://github.com/slviajero/test">https://github.com/slviajero/test</A><br>'
     s=s+'The original problem <A HREF="https://projecteuler.net/problem=9">https://projecteuler.net/problem=9</A><br>'
     return s  
+
