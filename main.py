@@ -46,7 +46,7 @@ def divisible(i,j):
 def odd(n):
     return divisible(n,2)
 
-def even(n)
+def even(n):
     return not divisible(n,2)
  
 def eulerf(k):
