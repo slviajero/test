@@ -45,7 +45,7 @@ def even(n):
 # 2n**2+2nm=2*n*(m+n)=k 
 #
 # this means that solving eulers problem can be reduced to solving
-# the diophanian equation k=2*n*(n+m) with the additional condition 
+# the diophantine equation k=2*n*(n+m) with the additional condition 
 # n>m as we want a>0. Renaming u=k/2 we solve u=n(m+n)
 #
 # (0) k has to be even
