@@ -29,6 +29,31 @@ def even(n):
     return divisible(n,2)
  
 # the main function
+#
+# a,b,c being a fermat triple with a<b<c and (*) a+b+c=k=1000
+#
+# we use the generating equations 
+#
+# a=n**2-m**2
+# b=2mn
+# c=n**2+m**2
+#
+# primitive only if n,m coprime and one of them even the other odd 
+# 
+# for any give k the equation a+b+c=k yields 
+#
+# 2n**2+2nm=2*n*(m+n)=k 
+#
+# this means that solving eulers problem can be reduced to solving
+# the diophanian equation k=2*n*(n+m) with the additional condition 
+# n>m as we want a>0. Renaming u=k/2 we solve u=n(m+n)
+#
+# (0) k has to be even
+# (1) we use that the maximum n has to be smaller then sqrt(u)
+# (2) m<n 
+# (3) n must divide u to solve the equation
+# (4) n+m must divide u
+#
 def eulerf(k):
 # condition (0) k must be even, for odd numbers there is no solution
     if odd(k):
@@ -44,7 +69,7 @@ def eulerf(k):
         if divisible(u,n):
             nlist.append(n)
 # check condition (2) and (4) now 
-# all possible m must be <n and (n+m) must dived u
+# all possible m must be <n and (n+m) must divide u
     sol=[]
     for n in nlist:
         for m in range(1,n):
