@@ -115,12 +115,14 @@ def eulers_dream(request):
         value=request_json['message']
     else:
         value=1000
-     
+    return eulers_reply(value)
+
+def eulers_reply(value):
     k=int(value)
-    result=eulerf(k)
     s="Solution of the Euler problem number 9 to find an pythagorean triplet a,b,c with a+b+c=k.<br><br>"
     if odd(k):
         s=s+f"There is no solution for odd k.<br>"
+    result=eulerf(k)
     ns=len(result)
     if ns==0:
         s=s+f"There is no solution for {k}.<br>"
