@@ -1,4 +1,5 @@
 from math import sqrt
+from flask import request
 
 # some of the functions from my number theory library not imported but copied
 # primitive euklid algorithm to find the greatest common divisor of two integers
@@ -115,9 +116,8 @@ def eulers_dream(request):
         value=request_json['message']
     else:
         value=1000
-    return eulers_reply(value)
+    url=request.base_url
 
-def eulers_reply(value):
     k=int(value)
     s="Solution of the Euler problem number 9 to find an pythagorean triplet a,b,c with a+b+c=k.<br><br>"
     if odd(k):
@@ -133,7 +133,7 @@ def eulers_reply(value):
         s=s+f"There are {ns} different solutions {result} for k={k}.<br>"
     s=s+"<br>Call the function with the url argument ?message=k for a different value of k.<br>"
     s=s+"<br>Example for the value 1008: <br>"
-    s=s+'<A HREF="https://europe-west2-staging-area-249707.cloudfunctions.net/function-1?message=1008">https://europe-west2-staging-area-249707.cloudfunctions.net/function-1?message=1008</A><br>'
+    s=s+'<A HREF="'+url+'?message=1008">'+url+'?message=1008</A><br>'
     s=s+'Source and documentation <A HREF="https://github.com/slviajero/test">https://github.com/slviajero/test</A><br>'
     s=s+'The original problem <A HREF="https://projecteuler.net/problem=9">https://projecteuler.net/problem=9</A><br>'
     return s  
