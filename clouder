@@ -1,0 +1,5 @@
+#!/bin/sh
+PROJECTID=staging-area-249707
+gcloud builds submit --tag gcr.io/$PROJECTID/helloworld
+gcloud beta run deploy --image gcr.io/$PROJECTID/helloworld --platform managed
+
